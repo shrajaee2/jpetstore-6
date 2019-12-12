@@ -54,7 +54,7 @@ class ScreenTransitionIT {
     browser = CHROME;
     headless = true;
     timeout = TimeUnit.SECONDS.toMillis(10);
-    baseUrl = "http://localhost:8092/jpetstore";
+    baseUrl = "http://localhost:8080/jpetstore";
   }
 
   @AfterEach
@@ -410,7 +410,7 @@ class ScreenTransitionIT {
 
   @Test
   void testLogoContent() {
-    // Open the home page
+    // Open the home pages
     open("/");
     assertThat(title()).isEqualTo("JPetStore Demo");
 
