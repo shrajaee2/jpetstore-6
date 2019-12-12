@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'Prebuild stage started...'
         echo 'home is $HOME'
-        sh 'mvn -T 1C  clean install -Dlicense.skip=true'
+        sh 'mvn -T 1C   -nsu clean install -Dlicense.skip=true'
       }
     }
 
