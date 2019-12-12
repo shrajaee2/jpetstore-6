@@ -10,7 +10,7 @@ pipeline {
     stage('Pre_bulding') {
       steps {
         echo 'Prebuild stage started...'
-        sh 'mvn clean install -Dlicense.skip=true'
+        sh 'mvn -T 1C  clean install -Dlicense.skip=true'
       }
     }
 
