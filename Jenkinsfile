@@ -19,10 +19,11 @@ pipeline {
         stage('Sonar Test') {
           steps {
             sh 'mvn sonar:sonar -Dlicense.skip=true'
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.68.146:9000'
           }
         }
 
-        stage('Print test cred') {
+        stage('Print some env ') {
           steps {
             echo "the tester is ${TESTER}"
           }
