@@ -1,8 +1,9 @@
 pipeline {
   agent {
     docker {
-      args '-v $HOME/.m2:/root/.m2'
-      image 'maven:3-alpine'
+      image 'maven:3-alpine\''
+      args '''-v  /$HOME/.m2:/root/.m2
+   '''
     }
 
   }
@@ -10,6 +11,8 @@ pipeline {
     stage('Pre_bulding') {
       steps {
         echo 'Prebuild stage started...'
+        sh """echo home dir is $HOME &&
+                 du -sh  $HOME/.m2"""
         sh 'mvn -T 1C  clean install -Dlicense.skip=true'
       }
     }
