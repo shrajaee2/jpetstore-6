@@ -410,7 +410,7 @@ class ScreenTransitionIT {
 
   @Test
   void testLogoContent() {
-    // Open the home page
+    // Open the home pages
     open("/");
     assertThat(title()).isEqualTo("JPetStore Demo");
 
