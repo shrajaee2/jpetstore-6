@@ -11,8 +11,8 @@ pipeline {
     stage('Pre_bulding') {
       steps {
         echo 'Prebuild stage started...'
-        sh """echo home dir is $HOME &&
-                 du -sh  $HOME/.m2"""
+        sh "echo home dir is $HOME"
+        sh "du -sh  $HOME/.m2"
         sh 'mvn -T 1C  clean install -Dlicense.skip=true'
       }
     }
